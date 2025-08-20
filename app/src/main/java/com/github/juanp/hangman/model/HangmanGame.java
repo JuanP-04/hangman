@@ -26,14 +26,18 @@ public class HangmanGame {
     private HangmanGameStatus hangmanGameStatus;
 
     public HangmanGame(final List<HangmanChar> characters) {
-        var whiteSpaces = "".repeat(characters.size());
+        var whiteSpaces = " ".repeat(characters.size());
         var characterSpace = "-".repeat(characters.size());
         this.lineSize = HANGMAN_INITIAL_LINE_LENGTH_WITH_LINE_SEPARATOR + whiteSpaces.length();
         this.hangmanGameStatus = PENDING;
-        this.hangmanPaths = buildHangmanPathsPostions();
+        this.hangmanPaths = buildHangmanPathsPositions();
         buildHangmanDesign(whiteSpaces, characterSpace);
         this.characters = setCharacterSpacesPositionInGame(characters, whiteSpaces.length());
         this.hangmanInitialSize = hangman.length();
+    }
+
+    public HangmanGameStatus getHangmanGameStatus() {
+        return hangmanGameStatus;
     }
 
     public void inputCharacter(final char character) {
@@ -67,7 +71,7 @@ public class HangmanGame {
 
         this.characters.forEach(c -> {
             if (c.getCharacter() == found.getFirst().getCharacter()){
-                c.enableVisibility();;
+                c.enableVisibility();
             }
         });
         if(this.characters.stream().noneMatch(HangmanChar::isInvisible)) {
@@ -81,7 +85,7 @@ public class HangmanGame {
         return this.hangman;
     }
 
-    private List<HangmanChar> buildHangmanPathsPostions() {
+    private List<HangmanChar> buildHangmanPathsPositions() {
         final var HEAD_LINE = 3;
         final var BODY_LINE = 4;
         final var LEGS_LINE = 5;
@@ -115,12 +119,13 @@ public class HangmanGame {
     }
 
     private void buildHangmanDesign(final String whiteSpaces, final String characterSpaces){
-        this.hangman = "  -----  " + whiteSpaces + System.lineSeparator() +
-                       "  |   |  " + whiteSpaces + System.lineSeparator() +
-                       "  |   |  " + whiteSpaces + System.lineSeparator() +
-                       "  |      " + whiteSpaces + System.lineSeparator() +
-                       "  |      " + whiteSpaces + System.lineSeparator() +
-                       "  |      " + whiteSpaces + System.lineSeparator() +
-                       "  |      " + characterSpaces + System.lineSeparator() +            "=========" + whiteSpaces + System.lineSeparator();
+        this.hangman = "  -----  " + whiteSpaces + "\n" +
+                       "  |   |  " + whiteSpaces + "\n" +
+                       "  |   |  " + whiteSpaces + "\n" +
+                       "  |      " + whiteSpaces + "\n" +
+                       "  |      " + whiteSpaces + "\n" +
+                       "  |      " + whiteSpaces + "\n" +
+                       "  |      " + whiteSpaces + "\n" +
+                       "=========" + characterSpaces + "\n";
     }
 }
