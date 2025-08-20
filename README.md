@@ -2,7 +2,7 @@
 
 ## Sobre o Projeto
 
-Este projeto é uma aplicação de console em Java que implementa o clássico Jogo da Forca. Foi desenvolvido como parte de um desafio de projeto do curso de Java da **DIO**, ministrado pelo desenvolvedor **José Luiz Abreu Cardoso Junior** com o objetivo de consolidar e aplicar na prática os pilares da Programação Orientada a Objetos (POO) em um ambiente de console interativo.
+Este projeto é uma aplicação de console em Java que implementa o clássico Jogo da Forca. Foi desenvolvido como parte de um desafio de projeto do curso de Java da **DIO**, ministrado pelo desenvolvedor **José Luiz Abreu Cardoso Junior**, com o objetivo de consolidar e aplicar na prática os pilares da Programação Orientada a Objetos (POO) em um ambiente de console interativo.
 
 O foco foi a criação de um jogo completo, desde a definição da palavra oculta (passada por argumentos de linha de comando) até a montagem de uma interface gráfica simplificada da forca e a interação com o usuário por meio de um menu.
 
